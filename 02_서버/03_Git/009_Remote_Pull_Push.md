@@ -74,6 +74,16 @@ git push origin +HEAD :master
 
 * 원격 브랜치 삭제
 git push -delete origin feature
+
+* 원격 브랜치 삭제
+git push -delete origin feature
+
+- 원격
+git push origin --delete <branchname>
+- 로컬
+git branch -d <branchname>
+git branch -D <branchname>
+
 git push [remotename] [:branch]
 git push origin :master2
 git push [remotename][localbranch][:remotebranch]
