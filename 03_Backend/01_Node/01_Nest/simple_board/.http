@@ -1,0 +1,55 @@
+# 기본
+GET http://localhost:3000
+####
+
+# 실행 test
+GET http://localhost:3000/test
+
+####
+http://localhost:3000/name/aa
+
+####
+http://localhost:3000/name?name=bb
+
+####
+
+# board
+GET http://localhost:3000/board
+
+####
+# board 전체 조회
+GET http://localhost:3000/board/all
+
+###
+
+# board id 조회
+GET http://localhost:3000/board/1
+
+###
+
+# board 생성
+POST http://localhost:3000/board
+Content-Type: application/json
+
+{
+  "title": "hello",
+  "content": "aa"
+}
+
+###
+
+# 수정
+PUT http://localhost:3000/board/5
+Content-Type: application/json
+
+{
+  "title" : "name",
+  "content": "bb"
+}
+
+###
+
+# 삭제
+DELETE http://localhost:3000/board/4
+
+###
