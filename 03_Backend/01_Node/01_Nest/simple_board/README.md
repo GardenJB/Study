@@ -34,8 +34,37 @@ nest start --watch
 프로덕션 모드 실행 : npm run start / nest start
 
 ###### module
-* contoroller & service > module을 통해 한번에 import 하기
-> controllers / providers
+- contoroller & service > module을 통해 한번에 import 하기
+  > controllers / providers
+
+
+###### dto : create api 작성에서 newboard의 필드 순서가 달라 에러 발생
+- javascript dto 객체 순서 보장 x
+>> 필드 순서를 명시해주기 
+
+```
+create(data: CreateBoardDto) {
+    const newBoard = {
+      id: this.getNextId(),
+      ...data
+    };
+    this.boards.push(newBoard);
+    return newBoard;
+  }
+```
+>>
+
+```
+create(data: CreateBoardDto) {
+    const newBoard = {
+      id: this.getNextId(),
+      title: data.title,
+      content: data.content,
+    };
+    this.boards.push(newBoard);
+    return newBoard;
+  }
+```
 
 #### etc
 
@@ -48,8 +77,10 @@ nest start --watch
 ```
 
 ##### param 설정
-* '`' 과 ''' 사용 구분
+
+- '`' 과 ''' 사용 구분
 
 ##### array
-* slice > 시작위치부터 값만큼 원소 제거
-* pop > 맨 마지막 요소 제거 및 반환
+
+- slice > 시작위치부터 값만큼 원소 제거
+- pop > 맨 마지막 요소 제거 및 반환

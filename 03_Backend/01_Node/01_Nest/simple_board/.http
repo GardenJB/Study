@@ -37,14 +37,24 @@ Content-Type: application/json
 }
 
 ###
-
-# 수정
-PUT http://localhost:3000/board/5
+# validation
+POST http://localhost:3000/board
 Content-Type: application/json
 
 {
-  "title" : "name",
-  "content": "bb"
+  "title": "o",
+  "content": ""
+}
+
+###
+
+# 수정
+PUT http://localhost:3000/board/2
+Content-Type: application/json
+
+{
+  "title" : "fde",
+  "content": ""
 }
 
 ###
