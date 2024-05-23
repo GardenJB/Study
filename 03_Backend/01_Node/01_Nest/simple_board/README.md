@@ -34,13 +34,14 @@ nest start --watch
 프로덕션 모드 실행 : npm run start / nest start
 
 ###### module
+
 - contoroller & service > module을 통해 한번에 import 하기
   > controllers / providers
 
-
 ###### dto : create api 작성에서 newboard의 필드 순서가 달라 에러 발생
+
 - javascript dto 객체 순서 보장 x
->> 필드 순서를 명시해주기 
+  > > 필드 순서를 명시해주기
 
 ```
 create(data: CreateBoardDto) {
@@ -52,7 +53,8 @@ create(data: CreateBoardDto) {
     return newBoard;
   }
 ```
->>
+
+> >
 
 ```
 create(data: CreateBoardDto) {
