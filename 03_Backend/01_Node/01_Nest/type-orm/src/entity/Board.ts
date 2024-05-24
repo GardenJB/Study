@@ -2,9 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { User } from './User';
 
 @Entity()
 export class Board {
@@ -25,4 +28,9 @@ export class Board {
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @ManyToOne(() => User)
+  // @JoinColumn({ name: 'userId' })
+  user: User;
+
 }
