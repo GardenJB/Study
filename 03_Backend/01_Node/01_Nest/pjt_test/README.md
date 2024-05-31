@@ -21,3 +21,61 @@ npm i --save class-validator class-transformer
 ```
 npm i --save mssql typeorm @nestjs/typeorm
 ```
+
+#### TypeORM 다수 데이터베이스 연결 Ref 예시
+
+```
+TypeOrmModule.forRootAsync({
+      name: 'default',
+      useFactory: async () => {
+        return {
+          type: 'oracle',
+          host: process.env.HOST,
+          port: process.env.PORT,
+          sid: process.env.SID,
+          username: process.env.USERNAME,
+          password: process.env.PASSWORD,
+          entities: [],
+          dropSchema: false,
+          synchronize: false,
+          keepConnectionAlive: true,
+        } as TypeOrmModuleAsyncOptions;
+      },
+    }),
+     TypeOrmModule.forRootAsync({
+      name: 'second',
+      useFactory: async () => {
+        return {
+          type: 'mysql',
+         host: process.env.HOST,
+          port: process.env.PORT,
+          username: process.env.USERNAME,
+          password: process.env.PASSWORD,
+          database: process.env.DATABASE,
+          entities: [],
+          dropSchema: false,
+		  synchronize: false,
+          keepConnectionAlive: true,
+        } as TypeOrmModuleAsyncOptions;
+      },
+    }),    
+
+```
+```
+ constructor(
+    @InjectDataSource('default')
+    private readonly mainDataSource: DataSource
+    @InjectDataSource('second')
+    private readonly subDataSource: DataSource
+  ) {}
+```
+
+
+###### db 스키마 정보 
+```
+npm i --save typeorm-model-generator
+
+npx typeorm-model-generator -h [dbhost주소] -d [데이터베이스이름] -p [port] -u [유저] -x [비밀번호] -e [db종류] -o [entity 파일 위치] (--case-file none  // snakecase>camelCase) 
+```
+
+
