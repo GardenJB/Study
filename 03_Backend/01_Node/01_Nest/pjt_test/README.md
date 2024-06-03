@@ -78,4 +78,15 @@ npm i --save typeorm-model-generator
 npx typeorm-model-generator -h [dbhost주소] -d [데이터베이스이름] -p [port] -u [유저] -x [비밀번호] -e [db종류] -o [entity 파일 위치] (--case-file none  // snakecase>camelCase) 
 ```
 
+## React Hook
+####  useForm 
+  : props > id 적용 / validation
+#### useReduce
+  : state 관리 + switch-case
 
+#### useDefferedValue
++ #### useMemo 
+  : 자동완성
+
+#### useSyncexternalStore
+  + window 객체
