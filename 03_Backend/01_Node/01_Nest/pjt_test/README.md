@@ -90,3 +90,5 @@ npx typeorm-model-generator -h [dbhost주소] -d [데이터베이스이름] -p [
 
 #### useSyncexternalStore
   + window 객체
+
+##
