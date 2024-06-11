@@ -86,3 +86,35 @@ create(data: CreateBoardDto) {
 
 - slice > 시작위치부터 값만큼 원소 제거
 - pop > 맨 마지막 요소 제거 및 반환
+
+
+## 24.06.11
+
+### 저장 프로시저 호출
+
+  * db 접근 권한 옵션 추가
+
+```
+// app.module
+... TypeormModule.forRoot({
+  ...
+  options: {
+        trustServerCertificate: true,
+      },
+})
+
+```
+
+  * 프로시저 호출
+  
+  ```
+  const queryRunner = this.MyRepository.manager.connection.createQueryRunner();
+
+    await queryRunner.connect();
+    const result = await queryRunner.query(`query`)
+    await queryRunner.release();
+    return result;
+ ```
+
+
+ 
