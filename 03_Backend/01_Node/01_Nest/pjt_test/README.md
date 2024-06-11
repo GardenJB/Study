@@ -1,4 +1,4 @@
-## DB module
+## 프로젝트 수동생성
 
 ```
 npm i --save @nestjs/core @nestjs/common rxjs mssql
@@ -20,6 +20,8 @@ npm i --save class-validator class-transformer
 
 ```
 npm i --save mssql typeorm @nestjs/typeorm
+
+npm install @nestjs/typeorm typeorm mssql
 ```
 
 #### TypeORM 다수 데이터베이스 연결 Ref 예시
