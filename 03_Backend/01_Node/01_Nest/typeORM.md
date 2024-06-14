@@ -17,3 +17,11 @@
     DataSource QueryRunner.query(`exec proc_name`, [params], true)
 
     But 도커파일로 올릴때 nodemodule 수정 반영의 문제 발생 
+
+
+#### for문 변수 복사 - 주소 참조
+ > 같은 변수를 바라볼 경우 이전 값이 새로운 값으로 변경 됨
+
+#### 값 받아오기
+> [{}] < arr[0][0] 접근
+
