@@ -4,3 +4,12 @@
 
 ### zod 
   > 유효성 검사 
+
+
+###### async / awit
+  > server side 페이지 함수 자체에 적용 가능
+
+  #### getElement >> 사전에 dom 요소가 형성된 경우만 HTMLElement로 인식 
+
+###### 외부 스크립트 실행 결과 조회 불가 문제
+  > document.write() 사용문 > 비동기에서 결과 호출 불가
