@@ -116,5 +116,7 @@ create(data: CreateBoardDto) {
     return result;
  ```
 
-
+#### db connectionPool 연결
+ > db 연결 부분을 따로 함수로 분리했더니 첫번째 호출을 연결 실패
+  >> 함수자체를 호출하는 부분에도 await을 붙여 연결이 모두 끝나고 진행될 수 있게 동기 처리를 해주자
  
