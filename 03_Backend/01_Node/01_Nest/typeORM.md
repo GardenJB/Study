@@ -25,3 +25,27 @@
 #### 값 받아오기
 > [{}] < arr[0][0] 접근
 
+
+
+### API 작성
+##### API 경로 찾는 순서
+```
+@Get('abc')
+( @Qurery('nnn') 
+  @Query('mmm')
+)
+@Get(`:id`)
+(
+  @Param('id')
+)
+@Get('bcc')
+(
+  @Query('ccc')
+)
+
+>> 순서의 경우 맨 아래 @Get('bcc') 요청이 위의 @Get(`:id`)로 들어가서 오류
+>> PathParams 사용 경우를 맨 아래로 위치 변경 
+  혹은 오류 방지를 위해 api 요청 url 통일해서 변경
+
+
+```

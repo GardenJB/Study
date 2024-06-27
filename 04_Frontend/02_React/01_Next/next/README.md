@@ -23,3 +23,16 @@
 ### url과 파일 구조 다르거나 get 요청 parameter가 여러개인 경우
   > searchParam & Link 사용 query 수정 필요
    : 기본적으로 폴더 구조에 존재하는 마지막 파라미터 페이지로 요청은 들어감
+
+
+
+#### 클라이언트 / 서버 컴포넌트
+  > 서버 컴포넌트에서는 cors 설정 x
+  > 클라이언트 컴포넌트에서는 cors 설정 o
+  ```
+  nest > main.ts 
+  app.enableCors();
+  추가
+  ```
+
+### dom 조작 > useRef()
